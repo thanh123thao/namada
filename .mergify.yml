@@ -16,7 +16,7 @@ queue_rules:
       - "#approved-reviews-by >= 1"
       - base = maint-1.0
     merge_method: merge
-    autosquash: true   
+    autosquash: fail   
 
   - name: backport-libs-0.46-queue
     batch_size: 3
@@ -27,7 +27,7 @@ queue_rules:
     autosquash: true   
 
 pull_request_rules:
-  - name: automatic merge to main or backport branch
+  - name: automatic merge to main or main branch
     conditions:
       - label = "merge"
       - label != "do-not-merge"
